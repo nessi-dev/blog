@@ -27,25 +27,26 @@ jobs:
           # Clean up
           rm -rf public
           
-          # Ensure themes directory exists
+          # Clean up and prepare directories
+          rm -rf themes/
           mkdir -p themes
           
-          # Install or update Ananke theme
-          if [ ! -d "themes/ananke" ]; then
-            echo "Installing Ananke theme..."
-            git clone --depth 1 https://github.com/theNewDynamic/gohugo-theme-ananke themes/ananke
-          else
-            echo "Updating Ananke theme..."
-            cd themes/ananke && git pull && cd ../..
-          fi
+          # Install theme as a git submodule
+          echo "Installing Ananke theme as submodule..."
+          git submodule add --force https://github.com/theNewDynamic/gohugo-theme-ananke themes/ananke
           
-          # Build the site with detailed output
-          echo "Building site..."
-          hugo version
+          # Initialize git submodules if not already done
+          git submodule init
+          git submodule update --recursive --remote
+          
+          # Verify theme installation
+          echo "Theme directory contents:"
+          ls -la themes/ananke/
           
           # Build the site with minimal flags for reliability
           echo "Building site with Hugo..."
-          hugo --gc --minify --cleanDestinationDir --baseURL https://blog.nessi.dev/ --theme ananke
+          hugo version
+          hugo --gc --minify --cleanDestinationDir --baseURL https://blog.nessi.dev/ --themesDir=themes --theme=ananke
           
           # Create necessary files
           echo "Creating deployment files..."
