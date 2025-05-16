@@ -13,6 +13,7 @@ permissions:
   contents: read
   pages: write
   id-token: write
+  deployments: write
 
 # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
 # However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
@@ -40,6 +41,8 @@ jobs:
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v4
+        with:
+          enablement: true
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
@@ -62,6 +65,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
+          name: github-pages
           path: ./public
 
   # Deployment job
@@ -75,3 +79,6 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v3
+        with:
+          artifact_name: github-pages
+          token: ${{ github.token }}
