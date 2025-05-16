@@ -43,16 +43,9 @@ jobs:
           echo "Building site..."
           hugo version
           
-          # Build the site
+          # Build the site with minimal flags for reliability
           echo "Building site with Hugo..."
-          hugo \
-            --gc \
-            --minify \
-            --cleanDestinationDir \
-            --baseURL https://blog.nessi.dev/ \
-            --theme ananke \
-            --verbose \
-            --themesDir=./themes
+          hugo --gc --minify --cleanDestinationDir --baseURL https://blog.nessi.dev/ --theme ananke
           
           # Create necessary files
           echo "Creating deployment files..."
