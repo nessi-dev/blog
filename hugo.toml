@@ -1,4 +1,4 @@
 baseURL = 'https://blog.nessi.dev/'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = 'Nessi.dev Blog - Delta-Native Data Quality'
 theme = "ananke"
