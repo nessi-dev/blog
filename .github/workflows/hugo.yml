@@ -32,7 +32,7 @@ jobs:
           
           # Clone the theme directly (faster and more reliable than submodules in CI)
           echo "Cloning Ananke theme..."
-          git clone --depth 1 --branch v2.0.0 https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke
+          git clone --depth 1 --branch main https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke
           
           # Verify theme installation
           echo "Theme directory structure:"
