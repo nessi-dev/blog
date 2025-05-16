@@ -25,12 +25,20 @@ jobs:
       - name: Build
         run: |
           rm -rf public
-          # Build for GitHub Pages
+          
+          # Install theme if not exists
+          if [ ! -d "themes/ananke" ]; then
+            git clone https://github.com/theNewDynamic/gohugo-theme-ananke themes/ananke
+          fi
+          
+          # Build for GitHub Pages with correct base URL
           hugo \
             --gc \
             --minify \
             --cleanDestinationDir \
-            --baseURL https://nessi-dev.github.io/blog/
+            --baseURL https://blog.nessi.dev/ \
+            --themesDir themes \
+            --theme ananke
           
           # Create necessary files
           touch public/.nojekyll
@@ -39,8 +47,10 @@ jobs:
           # Verify the files were built
           echo "=== Public directory contents ==="
           ls -la public/
-          echo "\n=== Index file ==="
-          cat public/index.html | head -n 20
+          echo -e "\n=== CSS Files ==="
+          find public -name "*.css" | sort
+          echo -e "\n=== Index file (first 20 lines) ==="
+          head -n 20 public/index.html
       
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
