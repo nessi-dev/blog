@@ -1,12 +1,15 @@
 ---
 title: 'Introducing Nessi: The Delta-Native Data Quality Engine'
-publishedAt: '2025-05-15T13:07:17+02:00'
+date: 2025-05-15T13:07:17+02:00
+draft: false
 author: 'Nessi Team'
-authorBio: 'The Nessi Team is dedicated to solving data quality challenges in modern data architectures.'
-tags: ['Data Quality', 'Delta Lake', 'Data Engineering', 'Data Pipelines']
-category: 'Technology'
-readingTime: 5
-excerpt: 'Discover how Nessi.dev is revolutionizing data quality for Delta Lake users by addressing schema drift, broken pipelines, and silent anomalies with a native, intelligent approach.'
+description: 'Discover how Nessi.dev is revolutionizing data quality for Delta Lake users by addressing schema drift, broken pipelines, and silent anomalies with a native, intelligent approach.'
+tags: 
+  - 'Data Quality' 
+  - 'Delta Lake' 
+  - 'Data Engineering' 
+  - 'Data Pipelines'
+categories: ['Technology']
 ---
 
 # Introducing Nessi.dev: The Delta-Native Data Quality Engine

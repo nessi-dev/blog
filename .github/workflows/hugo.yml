@@ -24,33 +24,45 @@ jobs:
       
       - name: Build
         run: |
+          # Clean up
           rm -rf public
           
-          # Install theme if not exists
-          if [ ! -d "themes/ananke" ]; then
-            git clone https://github.com/theNewDynamic/gohugo-theme-ananke themes/ananke
-          fi
+          # Install theme
+          echo "Installing Ananke theme..."
+          git clone --depth 1 https://github.com/theNewDynamic/gohugo-theme-ananke themes/ananke
           
-          # Build for GitHub Pages with correct base URL
+          # Build the site with detailed output
+          echo "Building site..."
+          hugo version
+          
+          # Build with detailed output
           hugo \
             --gc \
             --minify \
             --cleanDestinationDir \
             --baseURL https://blog.nessi.dev/ \
             --themesDir themes \
-            --theme ananke
+            --theme ananke \
+            --debug \
+            --verbose
           
           # Create necessary files
+          echo "Creating deployment files..."
           touch public/.nojekyll
           echo 'blog.nessi.dev' > public/CNAME
           
-          # Verify the files were built
+          # Debug output
+          echo "=== Build Complete ==="
           echo "=== Public directory contents ==="
           ls -la public/
+          echo -e "\n=== Theme files ==="
+          ls -la themes/ananke/static/css/
           echo -e "\n=== CSS Files ==="
           find public -name "*.css" | sort
           echo -e "\n=== Index file (first 20 lines) ==="
           head -n 20 public/index.html
+          echo -e "\n=== List of posts ==="
+          find public/posts -type f | sort
       
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
