@@ -74,8 +74,9 @@ jobs:
           echo "=== Build Complete ==="
           echo "=== Public directory contents ==="
           ls -la public/
-          echo -e "\n=== Theme files ==="
-          ls -la themes/ananke/static/css/
+          # Removed problematic theme files check
+          # echo -e "\n=== Theme files ==="
+          # ls -la themes/ananke/static/css/
           echo -e "\n=== CSS Files ==="
           find public -name "*.css" | sort
           echo -e "\n=== Index file (first 20 lines) ==="
