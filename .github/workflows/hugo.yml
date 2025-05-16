@@ -1,3 +1,4 @@
+# GitHub Actions workflow for deploying Hugo site to GitHub Pages
 name: Deploy Hugo site to GitHub Pages
 
 on:
