@@ -29,24 +29,38 @@ jobs:
           
           # Clean up and prepare directories
           rm -rf themes/
-          mkdir -p themes
           
-          # Install theme as a git submodule
-          echo "Installing Ananke theme as submodule..."
-          git submodule add --force https://github.com/theNewDynamic/gohugo-theme-ananke themes/ananke
-          
-          # Initialize git submodules if not already done
-          git submodule init
-          git submodule update --recursive --remote
+          # Clone the theme directly (faster and more reliable than submodules in CI)
+          echo "Cloning Ananke theme..."
+          git clone --depth 1 --branch v2.0.0 https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke
           
           # Verify theme installation
-          echo "Theme directory contents:"
-          ls -la themes/ananke/
+          echo "Theme directory structure:"
+          find themes/ananke -maxdepth 2 -type d | sort
+          
+          # Install theme dependencies if needed
+          if [ -f "themes/ananke/package.json" ]; then
+            echo "Installing theme dependencies..."
+            cd themes/ananke && npm install && cd ../..
+          fi
           
           # Build the site with minimal flags for reliability
           echo "Building site with Hugo..."
           hugo version
-          hugo --gc --minify --cleanDestinationDir --baseURL https://blog.nessi.dev/ --themesDir=themes --theme=ananke
+          
+          # Build with explicit theme path
+          THEME_PATH=$(pwd)/themes/ananke
+          echo "Using theme from: $THEME_PATH"
+          
+          # Run Hugo with explicit theme path
+          hugo \
+            --gc \
+            --minify \
+            --cleanDestinationDir \
+            --baseURL https://blog.nessi.dev/ \
+            --themesDir=themes \
+            --theme=ananke \
+            --path-warnings
           
           # Create necessary files
           echo "Creating deployment files..."
