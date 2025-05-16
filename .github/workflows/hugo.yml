@@ -25,16 +25,27 @@ jobs:
       - name: Build
         run: |
           rm -rf public
-          hugo --gc --minify --cleanDestinationDir --baseURL https://blog.nessi.dev/
+          # Build for GitHub Pages
+          hugo \
+            --gc \
+            --minify \
+            --cleanDestinationDir \
+            --baseURL https://nessi-dev.github.io/blog/
+          
+          # Create CNAME file
+          echo 'blog.nessi.dev' > public/CNAME
+          
           # Verify the files were built
           ls -la public/
       
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
-          cname: blog.nessi.dev
-          enable_jekyll: false
-          keep_files: false
-          force_orphan: true
+          branch: gh-pages
+          folder: public
+          clean: true
+          clean-exclude: |
+            .nojekyll
+            CNAME
+          commit-message: 'Deploy: Build ${{ github.run_id }}'
+          token: ${{ secrets.GITHUB_TOKEN }}
