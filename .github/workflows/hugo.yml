@@ -27,9 +27,17 @@ jobs:
           # Clean up
           rm -rf public
           
-          # Install theme
-          echo "Installing Ananke theme..."
-          git clone --depth 1 https://github.com/theNewDynamic/gohugo-theme-ananke themes/ananke
+          # Ensure themes directory exists
+          mkdir -p themes
+          
+          # Install or update Ananke theme
+          if [ ! -d "themes/ananke" ]; then
+            echo "Installing Ananke theme..."
+            git clone --depth 1 https://github.com/theNewDynamic/gohugo-theme-ananke themes/ananke
+          else
+            echo "Updating Ananke theme..."
+            cd themes/ananke && git pull && cd ../..
+          fi
           
           # Build the site with detailed output
           echo "Building site..."
