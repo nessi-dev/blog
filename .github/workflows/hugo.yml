@@ -81,4 +81,5 @@ jobs:
         uses: actions/deploy-pages@v3
         with:
           artifact_name: github-pages
-          token: ${{ github.token }}
+          # Use the default token but with explicit permissions
+          token: ${{ secrets.GITHUB_TOKEN }}
