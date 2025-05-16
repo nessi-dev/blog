@@ -1,0 +1,7 @@
+<!-- Custom CSS -->
+{{ $css := resources.Get "css/custom.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}" crossorigin="anonymous">
+
+<!-- Custom head content -->
+<meta name="theme-color" content="#2b6cb0">
+<meta name="msapplication-TileColor" content="#2b6cb0">

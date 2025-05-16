@@ -2,3 +2,41 @@ baseURL = 'https://blog.nessi.dev/'
 languageCode = 'en-us'
 title = 'Nessi.dev Blog - Delta-Native Data Quality'
 theme = "ananke"
+
+[params]
+  # Theme settings
+  favicon = "favicon.ico"
+  logo = "images/logo.png"
+  
+  # Custom CSS
+  custom_css = ["css/custom.css"]
+  
+  # Social media
+  github = "nessi-dev"
+  twitter = "nessi_dev"
+  linkedin = "company/nessi-dev"
+  
+  # Footer
+  footer_show_powered_by = true
+  footer_show_theme_info = true
+  
+  # Remove hacktoberfest banner
+  showHacktoberfestBanner = false
+
+[markup]
+  [markup.highlight]
+    codeFences = true
+    guessSyntax = true
+    lineNos = true
+    style = "monokai"
+  
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+  page = ["HTML", "Markdown"]
+  section = ["HTML", "RSS"]
+  taxonomy = ["HTML", "RSS"]
+  taxonomyTerm = ["HTML"]

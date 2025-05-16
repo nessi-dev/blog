@@ -1,0 +1,128 @@
+/* Custom CSS for better readability and color scheme */
+:root {
+  --text-color: #2d3748; /* Darker gray for better contrast */
+  --primary: #2b6cb0; /* A more professional blue */
+  --primary-hover: #2c5282; /* Darker blue for hover states */
+  --background: #ffffff; /* Pure white background */
+  --code-bg: #f7fafc; /* Light gray for code blocks */
+  --border-color: #e2e8f0; /* Lighter border color */
+}
+
+/* Base text styling */
+body {
+  color: var(--text-color);
+  line-height: 1.7;
+}
+
+/* Links */
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+  color: var(--primary-hover);
+  text-decoration: underline;
+}
+
+/* Headers */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--text-color);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+/* Navigation */
+.nav-main {
+  background-color: var(--primary);
+}
+
+.nav-main a {
+  color: white;
+}
+
+.nav-main a:hover {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+}
+
+/* Articles */
+.article-meta {
+  color: #4a5568;
+  font-size: 0.9em;
+  margin-bottom: 1.5rem;
+}
+
+.article-content {
+  color: var(--text-color);
+  line-height: 1.8;
+}
+
+/* Code blocks */
+pre, code {
+  background-color: var(--code-bg);
+  border-radius: 4px;
+}
+
+pre {
+  padding: 1rem;
+  overflow-x: auto;
+}
+
+code {
+  padding: 0.2em 0.4em;
+  font-size: 0.9em;
+}
+
+/* Footer */
+.footer {
+  border-top: 1px solid var(--border-color);
+  margin-top: 3rem;
+  padding: 2rem 0;
+  color: #4a5568;
+}
+
+/* Buttons */
+.btn {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.btn:hover {
+  background-color: var(--primary-hover);
+  color: white;
+  text-decoration: none;
+}
+
+/* Custom hacktoberfest removal */
+.hacktoberfest-banner {
+  display: none !important;
+}
+
+/* Improve readability for article content */
+.article-content p {
+  margin-bottom: 1.5em;
+}
+
+.article-content ul, .article-content ol {
+  margin-bottom: 1.5em;
+  padding-left: 1.5em;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  body {
+    font-size: 1.1em;
+  }
+  
+  .article-content {
+    font-size: 1.1em;
+  }
+}
