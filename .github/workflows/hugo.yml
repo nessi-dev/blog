@@ -32,17 +32,20 @@ jobs:
           
           # Clone the theme directly (faster and more reliable than submodules in CI)
           echo "Cloning Ananke theme..."
-          git clone --depth 1 --branch main https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke
+          git clone --depth 1 --branch main https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/gohugo-theme-ananke
+          
+          # Create symlink for the theme
+          ln -sf gohugo-theme-ananke themes/ananke
           
           # Verify theme installation
           echo "Theme directory structure:"
-          find themes/ananke -maxdepth 2 -type d | sort
+          find themes/ananke -maxdepth 2 -type d | sort || true
           
-          # Install theme dependencies if needed
-          if [ -f "themes/ananke/package.json" ]; then
-            echo "Installing theme dependencies..."
-            cd themes/ananke && npm install && cd ../..
-          fi
+          # Install theme dependencies if needed (commented out as Ananke doesn't need npm)
+          # if [ -f "themes/ananke/package.json" ]; then
+          #   echo "Installing theme dependencies..."
+          #   cd themes/ananke && npm install && cd ../..
+          # fi
           
           # Build the site with minimal flags for reliability
           echo "Building site with Hugo..."
