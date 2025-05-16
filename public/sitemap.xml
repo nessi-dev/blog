@@ -2,24 +2,36 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://blog.nessi.dev/categories/</loc>
+    <loc>http://localhost:1313/categories/</loc>
+    <lastmod>2025-05-15T13:07:17+02:00</lastmod>
   </url><url>
-    <loc>https://blog.nessi.dev/tags/data-engineering/</loc>
+    <loc>http://localhost:1313/tags/data-engineering/</loc>
+    <lastmod>2025-05-15T13:07:17+02:00</lastmod>
   </url><url>
-    <loc>https://blog.nessi.dev/tags/data-pipelines/</loc>
+    <loc>http://localhost:1313/tags/data-pipelines/</loc>
+    <lastmod>2025-05-15T13:07:17+02:00</lastmod>
   </url><url>
-    <loc>https://blog.nessi.dev/tags/data-quality/</loc>
+    <loc>http://localhost:1313/tags/data-quality/</loc>
+    <lastmod>2025-05-15T13:07:17+02:00</lastmod>
   </url><url>
-    <loc>https://blog.nessi.dev/tags/delta-lake/</loc>
+    <loc>http://localhost:1313/tags/delta-lake/</loc>
+    <lastmod>2025-05-15T13:07:17+02:00</lastmod>
   </url><url>
-    <loc>https://blog.nessi.dev/posts/hello-world/</loc>
+    <loc>http://localhost:1313/posts/introducing-nessi/</loc>
+    <lastmod>2025-05-15T13:07:17+02:00</lastmod>
   </url><url>
-    <loc>https://blog.nessi.dev/posts/introducing-nessi/</loc>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2025-05-15T13:07:17+02:00</lastmod>
   </url><url>
-    <loc>https://blog.nessi.dev/</loc>
+    <loc>http://localhost:1313/posts/</loc>
+    <lastmod>2025-05-15T13:07:17+02:00</lastmod>
   </url><url>
-    <loc>https://blog.nessi.dev/posts/</loc>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2025-05-15T13:07:17+02:00</lastmod>
   </url><url>
-    <loc>https://blog.nessi.dev/tags/</loc>
+    <loc>http://localhost:1313/categories/technology/</loc>
+    <lastmod>2025-05-15T13:07:17+02:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/hello-world/</loc>
   </url>
 </urlset>

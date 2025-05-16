@@ -1,25 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>My New Hugo Site</title>
-    <link>https://blog.nessi.dev/</link>
-    <description>Recent content on My New Hugo Site</description>
+    <title>Nessi.dev Blog - Delta-Native Data Quality</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content on Nessi.dev Blog - Delta-Native Data Quality</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <atom:link href="https://blog.nessi.dev/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Hello, World!</title>
-      <link>https://blog.nessi.dev/posts/hello-world/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://blog.nessi.dev/posts/hello-world/</guid>
-      <description>&lt;h2 id=&#34;hello-world&#34;&gt;Hello World!&lt;/h2&gt;&#xA;&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut non lorem diam. Quisque vulputate nibh sodales eros pretium tincidunt. Aenean porttitor efficitur convallis. Nulla sagittis finibus convallis. Phasellus in fermentum quam, eu egestas tortor. Maecenas ac mollis leo. Integer maximus eu nisl vel sagittis.&lt;/p&gt;&#xA;&lt;p&gt;Suspendisse facilisis, mi ac scelerisque interdum, ligula ex imperdiet felis, a posuere eros justo nec sem. Nullam laoreet accumsan metus, sit amet tincidunt orci egestas nec. Pellentesque ut aliquet ante, at tristique nunc. Donec non massa nibh. Ut posuere lacus non aliquam laoreet. Fusce pharetra ligula a felis porttitor, at mollis ipsum maximus. Donec quam tortor, vehicula a magna sit amet, tincidunt dictum enim. In hac habitasse platea dictumst. Mauris sit amet ornare ligula, blandit consequat risus. Duis malesuada pellentesque lectus, non feugiat turpis eleifend a. Nullam tempus ante et diam pretium, ac faucibus ligula interdum.&lt;/p&gt;</description>
-    </item>
+    <lastBuildDate>Thu, 15 May 2025 13:07:17 +0200</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Introducing Nessi: The Delta-Native Data Quality Engine</title>
-      <link>https://blog.nessi.dev/posts/introducing-nessi/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://blog.nessi.dev/posts/introducing-nessi/</guid>
+      <link>http://localhost:1313/posts/introducing-nessi/</link>
+      <pubDate>Thu, 15 May 2025 13:07:17 +0200</pubDate>
+      <guid>http://localhost:1313/posts/introducing-nessi/</guid>
       <description>&lt;h1 id=&#34;introducing-nessidev-the-delta-native-data-quality-engine&#34;&gt;Introducing Nessi.dev: The Delta-Native Data Quality Engine&lt;/h1&gt;&#xA;&lt;p&gt;In today&amp;rsquo;s data-driven world, maintaining data quality isn&amp;rsquo;t just a luxury—it&amp;rsquo;s a necessity. Modern data teams face unprecedented challenges with schema drift, broken pipelines, and silent anomalies, particularly when working with Delta Lake. These issues aren&amp;rsquo;t just inconvenient; they can lead to costly mistakes and lost opportunities.&lt;/p&gt;&#xA;&lt;h2 id=&#34;the-challenge&#34;&gt;The Challenge&lt;/h2&gt;&#xA;&lt;p&gt;Modern data teams are drowning in a sea of data quality issues:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;&lt;strong&gt;Schema Drift&lt;/strong&gt;: Unexpected changes in data structure that break downstream processes&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Pipeline Failures&lt;/strong&gt;: Silent breakdowns that go unnoticed until it&amp;rsquo;s too late&lt;/li&gt;&#xA;&lt;li&gt;&lt;strong&gt;Data Anomalies&lt;/strong&gt;: Subtle irregularities that compromise data integrity&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;And when you&amp;rsquo;re working with Delta Lake, these challenges become even more pronounced.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Hello, World!</title>
+      <link>http://localhost:1313/posts/hello-world/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/hello-world/</guid>
+      <description>&lt;h2 id=&#34;hello-world&#34;&gt;Hello World!&lt;/h2&gt;&#xA;&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut non lorem diam. Quisque vulputate nibh sodales eros pretium tincidunt. Aenean porttitor efficitur convallis. Nulla sagittis finibus convallis. Phasellus in fermentum quam, eu egestas tortor. Maecenas ac mollis leo. Integer maximus eu nisl vel sagittis.&lt;/p&gt;&#xA;&lt;p&gt;Suspendisse facilisis, mi ac scelerisque interdum, ligula ex imperdiet felis, a posuere eros justo nec sem. Nullam laoreet accumsan metus, sit amet tincidunt orci egestas nec. Pellentesque ut aliquet ante, at tristique nunc. Donec non massa nibh. Ut posuere lacus non aliquam laoreet. Fusce pharetra ligula a felis porttitor, at mollis ipsum maximus. Donec quam tortor, vehicula a magna sit amet, tincidunt dictum enim. In hac habitasse platea dictumst. Mauris sit amet ornare ligula, blandit consequat risus. Duis malesuada pellentesque lectus, non feugiat turpis eleifend a. Nullam tempus ante et diam pretium, ac faucibus ligula interdum.&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

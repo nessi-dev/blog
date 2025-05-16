@@ -9,8 +9,8 @@
 }
 
 /* Base text styling */
-body {
-  color: var(--text-color);
+body, .article-content, .main, .content, .post-content, #main, #content {
+  color: #111 !important;
   line-height: 1.7;
 }
 
