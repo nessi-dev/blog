@@ -32,11 +32,15 @@ jobs:
             --cleanDestinationDir \
             --baseURL https://nessi-dev.github.io/blog/
           
-          # Create CNAME file
+          # Create necessary files
+          touch public/.nojekyll
           echo 'blog.nessi.dev' > public/CNAME
           
           # Verify the files were built
+          echo "=== Public directory contents ==="
           ls -la public/
+          echo "\n=== Index file ==="
+          cat public/index.html | head -n 20
       
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
