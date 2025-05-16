@@ -43,14 +43,14 @@ jobs:
           echo "Building site..."
           hugo version
           
-          # Build with detailed output
+          # Build the site
+          echo "Building site with Hugo..."
           hugo \
             --gc \
             --minify \
             --cleanDestinationDir \
             --baseURL https://blog.nessi.dev/ \
             --theme ananke \
-            --debug \
             --verbose \
             --themesDir=./themes
           
