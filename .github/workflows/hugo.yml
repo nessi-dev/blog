@@ -7,13 +7,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      pages: write
-      id-token: write
-    
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -27,28 +22,19 @@ jobs:
           hugo-version: '0.147.3'
           extended: true
       
-      - name: Install Node.js dependencies
-        run: |
-          npm ci
-      
       - name: Build
         run: |
-          # Clean the public directory
-          rm -rf public/*
-          # Build with the correct base URL
-          hugo --gc --minify --cleanDestinationDir --baseURL https://nessi-dev.github.io/blog/
+          rm -rf public
+          hugo --gc --minify --cleanDestinationDir --baseURL https://blog.nessi.dev/
           # Verify the files were built
           ls -la public/
       
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@v4
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          folder: public
-          branch: gh-pages
-          clean: true
-          clean-exclude: |
-            .nojekyll
-            CNAME
-          single-commit: true
-          commit-message: 'Deploy: Build ${{ github.run_id }}'
-          token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          cname: blog.nessi.dev
+          enable_jekyll: false
+          keep_files: false
+          force_orphan: true
