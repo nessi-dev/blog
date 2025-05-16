@@ -33,16 +33,22 @@ jobs:
       
       - name: Build
         run: |
+          # Clean the public directory
+          rm -rf public/*
+          # Build with the correct base URL
           hugo --gc --minify --cleanDestinationDir --baseURL https://nessi-dev.github.io/blog/
+          # Verify the files were built
+          ls -la public/
       
       - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
-          cname: blog.nessi.dev
-          enable_jekyll: false
-          keep_files: false
-          force_orphan: true
-          user_name: 'github-actions[bot]'
-          user_email: 'github-actions[bot]@users.noreply.github.com'
+          folder: public
+          branch: gh-pages
+          clean: true
+          clean-exclude: |
+            .nojekyll
+            CNAME
+          single-commit: true
+          commit-message: 'Deploy: Build ${{ github.run_id }}'
+          token: ${{ secrets.GITHUB_TOKEN }}
